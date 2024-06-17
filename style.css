@@ -35,8 +35,9 @@ a, a:link, a:visited {
 }
 
 h1, h2 {
-  font-family: "times", serif;
+  font-family: "adobe-myungjo-std", sans-serif;
   font-weight: 400;
+  font-style: normal;
   color: #FFFFFF;
   margin: 0;
 }
