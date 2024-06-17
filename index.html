@@ -18,8 +18,8 @@
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', (event) => {
-          const container = document.querySelector('.wrap-horizontal');
-          container.addEventListener('wheel', (e) => {
+          const container = document.querySelector('.horizontal-container');
+          window.addEventListener('wheel', (e) => {
               if (e.deltaY !== 0) {
                   container.scrollLeft += e.deltaY;
                   e.preventDefault();
