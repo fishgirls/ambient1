@@ -1,15 +1,15 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
-body {
+html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden; /* 세로 스크롤바 숨기기 */
     background: #e7e7e7;
     font-family: "Pretendard", sans-serif;
-}
 
 
 h1, h2 {
-    font-family: 'Batang', 'Gungseo', 'Nanum Myeongjo', serif;
+    font-family: "Pretendard", sans-serif;
 }
 
 .txt {
