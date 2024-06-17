@@ -2,7 +2,19 @@
 
 * {
   box-sizing: border-box;
-  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap-horizontal {
+  width: 100%;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  color: #112031;
+  background: #e7e7e7;
+  display: flex;
+  white-space: nowrap;
 }
 
 html {
@@ -12,32 +24,29 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: #e7e7e7;
   font-family: "Pretendard", sans-serif;
   word-break: keep-all;
 }
 
 a, a:link, a:visited {
-  color: #BC8F8F;
+  color: #b1b1b1;
   text-decoration: none;
 }
 
-h1 {
+h1, h2 {
   font-family: "times", serif;
-  font-size: 2.8rem;
   font-weight: 400;
-  color: #000000;
+  color: #FFFFFF;
   margin: 0;
-  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
 }
 
 h2 {
-  font-family: "times", serif;
-  font-size: 2.8rem;
-  font-weight: 400;
-  color: #BC8F8F;
-  margin: 0;
-  text-align: center;
+  font-size: 2.4rem;
 }
 
 .header_wrap {
@@ -46,7 +55,7 @@ h2 {
   position: fixed;
   justify-content: space-between;
   height: 5vh;
-  background-color: #000000;
+  background-color: #e7e7e7;
   list-style-type: none;
   text-align: center;
   z-index: 999;
@@ -59,131 +68,68 @@ h2 {
   padding-left: 1vw;
 }
 
-.figure { 
-  width: 100%; 
-  margin: 0 auto; 
-  text-align: center; 
-}
-
-.figure img { 
-  max-width: 100%;
-}
-
-figcaption {
-  font-family: "Pretendard", sans-serif;
-  font-size: 1em;
-  text-align: center;
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
 .background {
-  display: flex;
-  justify-content: space-between;
-  justify-content: center;
-  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+  width: 100vw;
   height: 100vh;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.text-box {
   position: absolute;
-}
-
-.background img { 
-  max-width: 100%; 
-}
-
-.main {
-  min-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  max-width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
-.main h1 {
-  position: absolute;
-  bottom: 1.5rem;
+.text-box h2, .text-box p {
+  color: white;
 }
 
-.contents {
-  max-width: 980px;
-  margin: 10vh auto;
-  padding: 0 1rem;
-}
-
-.contents p {
+.text-box p {
   font-size: 1.7rem;
   line-height: 1.7em;
-  padding-bottom: 0;
-}
-
-.contents p span {
-  font-family: "times";
-  font-size: 1em;
-}
-
-table {
-  font-size: 1.4rem;
-  line-height: 1.4em;
-  background: #fff;
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table tr, table td, table th {
-  border: 1px solid #E2E2E2;
-  border-left: none;
-  border-right: none;
-}
-
-table td, table th {
-  padding: 0.3em 0 0.3em;
-}
-
-table td:nth-child(2) {
-  font-weight: 600;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
-  .contents p {
+  .text-box p {
     font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .figure {
-    width: 100%;
-    padding: 0rem;
-  }
-  .figure img {
-    width: 100%;
-  }
   .background {
     padding: 0;
   }
-  figcaption {
+  .text-box p {
     font-family: "Pretendard", sans-serif;
     font-size: 1em;
     text-align: left;
     padding: 0 1rem;
-  }
-  table {
-    font-size: 1.2rem;
-    letter-spacing: 0.2px;
-    line-height: 1.4em;
-  }
-  table td, table th {
-    padding: 0.4em 0 0.3em;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .contents p {
-    font-size: 1.2rem;
-  }
-}
-
-
-@media screen and (max-width: 350px) {
-  .contents p {
-    font-size: 1.1rem;
   }
 }
